@@ -1,37 +1,18 @@
 # J124 Final Project - Matthew Rich
 My Data Journalism final project, focused on California vaccination rates. This repository includes all necessary screenshots, instructions, and data visualization files for recreation of conclusions.
 
-## Story Pitch
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As the pandemic continues to linger globally and the long-term effectiveness of vaccines comes into question, it is worth taking a look back at the hyperpolarized issue that was vaccine efficacy/implementation. I intend to use a combination of two datasets provided by the California Secretary of State’s office to assess whether there is decisive evidence of vaccine efficacy along party lines in the state of California. These datasets are a comprehensive documentation of vaccine dose counts by county from 2020-present, and a recording of voting records by county in the 2020 election. Paired with accessible statistical tests for significance, I aim to establish whether vaccination rates are clearly divided along ideological lines regardless of what individuals may say for themselves. I will also confirm the efficacy of vaccines by pairing rate of hospitalization (from a statewide dataset) with rates of vaccination by county– a likely consequence of the seemingly correlated vaccine politicization. 
+I selected two datasets which reflected my interest in the intersection of public health and modern politics. As such, one dataset is a collection of vaccination data points from the beginning of the pandemic (2020) up until the present day, as collected by the California Department of Public Health.
 
-## Individuals for Interviews
-* Amy Mitchell - Director of Journalism Research, Pew Research Center
-  * Contact: Twitter @asmitch (no other contact info readily available)
-  * Email: info@pewresearch.org (suggested email to contact staffers)
-  * Reason for contact: Has engaged with considerable amounts of data relating to vaccines and political affiliations. Has also authored many related articles for Pew Research Center. As such, she would serve as a great expert source on my chosen subject matter, and can speak more specifically about vaccine politicization as it relates to California.
-* California Department of Public Health (CPDH) - General Request for Comment
-  * Contact: CDPHpress@cdph.ca.gov
-  * Reason for contact: the CDPH played a large role in helping to compose all of the available COVID health datasets available through the California Secretary of State. As such, I would like to try to establish contact with a representative of the department to see if they have any comment on the apparent political correlation.
-* Alex Messick - vox populi source
-  * Contact: 760-698- 8457
-  * Reason for Contact: Alex is an individual I know who had formerly not received the vaccine but later opted in favor of receiving a full dose. His opinion would serve as a humanizing voice for this article, while providing light on whether his initial decision and change of heart was personally affected by politics in any way.
+The second dataset is a log of voter turnout/candidate preferences as recorded during the 2020 Presidential election. With the upcoming data analysis portion, I hope to find some preliminary connections between counties in the two unique datasets.
 
-## Additional Sources
-* Third Dataset: COVID-19 Post-Vaccination Statewide Stats Dataset
-  * Source: California Department of Public Health (CDPH)
-  * https://data.ca.gov/dataset/covid-19-post-vaccination-infection-data/resource/83bd2549-63b8-4e3c-b663-80baccea9e96
-  * Rationale: This data set specifically breaks down vaccinated versus unvaccinated hospitalizations over time in the state of California. It would be useful in making my final comparison of vaccination rates versus hospitalizations.
-* Pew Research Article: Americans who relied most on Trump for COVID-19 news among least likely to be vaccinated.
-  * Source: Pew Research Center
-  * https://www.pewresearch.org/fact-tank/2021/09/23/americans-who-relied-most-on-trump-for-covid-19-news-among-least-likely-to-be-vaccinated/
-  * Rationale: This article was co-authored by one of the individuals who I would intend to interview. It provides a necessary preliminary glimpse at correlation between political beliefs and position on vaccine efficacy.
 
 ## Data Analysis & Questions
 ### 1) What are the top five counties in terms of percentage of the population that fully vaccinated? 
   1. Acquire county population data. I found this data through a California Demographics report. Use VLOOKUP function to add county population data to vaccination data.
-  2. Create a pivot table in your spreadsheet application of choice. Add county to the rows section, then County_Population and cumulative_fully_vaccinated.
-  3. Upon getting these statistics into the table, create a spreadsheet formula that divides the cumulative statistic by the county population. Multiply by 100 to acquire the percentage.
-  4. Copy and paste the county names alongside their percentage vaccinated as plain text. Sort by percentage. This will denote the vaccination rates by county in descending or ascending order, and provide you the answer to these questions!
+   * **Formula Used:** =VLOOKUP(D2, 'Total Registered Voters by County'!$A$1:$B$58, 2, false)
+  3. Create a pivot table in your spreadsheet application of choice. Add county to the rows section, then County_Population and cumulative_fully_vaccinated.
+  4. Upon getting these statistics into the table, create a spreadsheet formula that divides the cumulative statistic by the county population. Multiply by 100 to acquire the percentage.
+  5. Copy and paste the county names alongside their percentage vaccinated as plain text. Sort by percentage. This will denote the vaccination rates by county in descending or ascending order, and provide you the answer to these questions!
 
 **Pivot Table Example**
 
@@ -51,9 +32,10 @@ My Data Journalism final project, focused on California vaccination rates. This 
   2. Clean dataset by simplifying the “Party Name” variable to a political ideology identifier. I used Find & Replace to simplify all included parties as either “Left” leaning or “Right” leaning. Independent parties/candidates with no affiliated parties are left out since they only represent a very small portion of total vote allocations.
   3. Add a variable titled “total_registered_voters” to the table. Using another datasheet from the CA Secretary of State, acquire the number of total registered voters by county for the 2020 election. NOTE: There may be a simpler document available, but I had to copy this data by hand from a PDF.
   4. Use VLOOKUP function to stitch the new variable values into the original sheet.
-  5. In a new pivot table, add a filter for party ideology that only allows values stemming from “Right” leaning parties.
-  6. Add county name to the Rows section. Add Vote Total and total_registered_voters to the values section. Sort by sum of vote total.
-  7. Divide SUM of Vote Total by MAX of total_registered_voters. Multiply by 100 for percentage. Copy paste as plain text alongside county names, then sort by greatest to least. 
+ * **Formula Used:** =VLOOKUP(A2, 'County Populations'!$A$1:$B$59, 2, false)
+  6. In a new pivot table, add a filter for party ideology that only allows values stemming from “Right” leaning parties.
+  7. Add county name to the Rows section. Add Vote Total and total_registered_voters to the values section. Sort by sum of vote total.
+  8. Divide SUM of Vote Total by MAX of total_registered_voters. Multiply by 100 for percentage. Copy paste as plain text alongside county names, then sort by greatest to least. 
   
 **Pivot Table Example**
 
@@ -98,3 +80,29 @@ My Data Journalism final project, focused on California vaccination rates. This 
 * https://www.datawrapper.de/_/kcmTk/
 * https://www.datawrapper.de/_/yonsI/
 * https://www.datawrapper.de/_/uZu7A/
+
+
+## Story Pitch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As the pandemic continues to linger globally and the long-term effectiveness of vaccines comes into question, it is worth taking a look back at the hyperpolarized issue that was vaccine efficacy/implementation. I intend to use a combination of two datasets provided by the California Secretary of State’s office to assess whether there is decisive evidence of vaccine efficacy along party lines in the state of California. These datasets are a comprehensive documentation of vaccine dose counts by county from 2020-present, and a recording of voting records by county in the 2020 election. Paired with accessible statistical tests for significance, I aim to establish whether vaccination rates are clearly divided along ideological lines regardless of what individuals may say for themselves. I will also confirm the efficacy of vaccines by pairing rate of hospitalization (from a statewide dataset) with rates of vaccination by county– a likely consequence of the seemingly correlated vaccine politicization. 
+
+## Individuals for Interviews
+* Amy Mitchell - Director of Journalism Research, Pew Research Center
+  * Contact: Twitter @asmitch (no other contact info readily available)
+  * Email: info@pewresearch.org (suggested email to contact staffers)
+  * Reason for contact: Has engaged with considerable amounts of data relating to vaccines and political affiliations. Has also authored many related articles for Pew Research Center. As such, she would serve as a great expert source on my chosen subject matter, and can speak more specifically about vaccine politicization as it relates to California.
+* California Department of Public Health (CPDH) - General Request for Comment
+  * Contact: CDPHpress@cdph.ca.gov
+  * Reason for contact: the CDPH played a large role in helping to compose all of the available COVID health datasets available through the California Secretary of State. As such, I would like to try to establish contact with a representative of the department to see if they have any comment on the apparent political correlation.
+* Alex Messick - vox populi source
+  * Contact: 760-698- 8457
+  * Reason for Contact: Alex is an individual I know who had formerly not received the vaccine but later opted in favor of receiving a full dose. His opinion would serve as a humanizing voice for this article, while providing light on whether his initial decision and change of heart was personally affected by politics in any way.
+
+## Additional Sources
+* Third Dataset: COVID-19 Post-Vaccination Statewide Stats Dataset
+  * Source: California Department of Public Health (CDPH)
+  * https://data.ca.gov/dataset/covid-19-post-vaccination-infection-data/resource/83bd2549-63b8-4e3c-b663-80baccea9e96
+  * Rationale: This data set specifically breaks down vaccinated versus unvaccinated hospitalizations over time in the state of California. It would be useful in making my final comparison of vaccination rates versus hospitalizations.
+* Pew Research Article: Americans who relied most on Trump for COVID-19 news among least likely to be vaccinated.
+  * Source: Pew Research Center
+  * https://www.pewresearch.org/fact-tank/2021/09/23/americans-who-relied-most-on-trump-for-covid-19-news-among-least-likely-to-be-vaccinated/
+  * Rationale: This article was co-authored by one of the individuals who I would intend to interview. It provides a necessary preliminary glimpse at correlation between political beliefs and position on vaccine efficacy.
