@@ -88,9 +88,9 @@ My Data Journalism final project, focused on California vaccination rates. This 
 <img src="https://user-images.githubusercontent.com/109619733/183393283-f39eee03-c41b-483d-a98e-73200948d8d3.png" width="550" height="670">
 
 <p float="left">
-<img src="https://user-images.githubusercontent.com/109619733/183393300-68944a78-875a-43c1-b100-a3f941aac4ae.png" width="450" height="570">
+<img src="https://user-images.githubusercontent.com/109619733/183393300-68944a78-875a-43c1-b100-a3f941aac4ae.png" width="400" height="520">
 
-<img src="https://user-images.githubusercontent.com/109619733/183393309-5adf544c-334e-47a2-b3db-55262530e76b.png" width="450" height="570">
+<img src="https://user-images.githubusercontent.com/109619733/183393309-5adf544c-334e-47a2-b3db-55262530e76b.png" width="400" height="520">
 </p>
 
 **Links to Original Visualizations in DataWrapper:**
